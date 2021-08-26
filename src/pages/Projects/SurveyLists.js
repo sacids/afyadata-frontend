@@ -9,6 +9,9 @@ import http from '../../services/http-common'
 const SurveyLists = (props) => {
     const [surveys, setSurveys] = useState([]);
 
+    //projectId
+    console.log("ProjectId => " + props.projectId)
+
     //retrieve data 
     useEffect(() => {
         retrieveSurveys();
@@ -16,7 +19,7 @@ const SurveyLists = (props) => {
 
     //retrieve lists of surveys
     const retrieveSurveys = () => {
-        http.get("/surveys/")
+        http.get("/project/" + props.projectId + "/surveys")
             .then((response) => {
                 console.log(response);
                 setSurveys(response.data);
@@ -55,7 +58,7 @@ const SurveyLists = (props) => {
                     <CardBody>
                         <Row>
                             <Col md={12}>
-                                <Link to="/create-survey" className="btn btn-outline-primary btn-xs">
+                                <Link to={'/create-survey/' + props.projectId} className="btn btn-outline-primary btn-xs">
                                     <i className="bx bx-plus"></i> Create New
                                 </Link>
                             </Col>

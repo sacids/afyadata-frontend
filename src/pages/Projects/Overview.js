@@ -10,6 +10,7 @@ import { format } from 'date-fns';
 //import component
 import SurveyLists from './SurveyLists';
 
+//service
 import http from '../../services/http-common'
 
 const ProjectOverview = props => {
@@ -18,8 +19,7 @@ const ProjectOverview = props => {
     const [project, setProject] = useState([]);
     const [projectGroups, setProjectGroups] = useState([]);
     const [projectMembers, setProjectMembers] = useState([]);
-
-    console.log("project-id => " + props.match.params.id);
+    const [param, setParam] = useState(props.match.params.id);
 
     //retrieve data 
     useEffect(() => {
@@ -144,7 +144,7 @@ const ProjectOverview = props => {
                                 </TabPane>
 
                                 <TabPane tabId="surveys">
-                                    <SurveyLists />
+                                    <SurveyLists projectId={param} />
                                 </TabPane>
 
                                 <TabPane tabId="project-groups">

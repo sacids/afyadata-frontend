@@ -18,7 +18,7 @@ import CreateProject from "pages/Projects/Create"
 import ProjectOverview from "pages/Projects/Overview"
 
 //survey 
-// import CreateSurvey from "pages/Surveys/Create"
+import CreateSurvey from "pages/Surveys/Create"
 // import EditSurvey from "pages/Surveys/Edit"
 // import ViewSurveyData from "pages/Surveys/ViewData"
 
@@ -35,7 +35,7 @@ const userRoutes = [
   { path: "/create-project/:id", component: CreateProject },
   { path: "/project-overview/:id", component: ProjectOverview },
 
-  // { path: "create-survey", component: CreateSurvey},
+  { path: "/create-survey/:id", component: CreateSurvey},
   // { path: "edit-survey/:id", component: EditSurvey},
   // { path: "view-survey-data/:id", component: ViewSurveyData},
 

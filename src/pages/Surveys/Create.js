@@ -14,6 +14,9 @@ const CreateSurvey = props => {
         XMLFile: undefined
     };
     const [survey, setSurvey] = useState(initialSurvey);
+    const [param, setParam] = useState(props.projectId);
+
+    console.log("ProjectId => " + props.projectId)
 
     //handle Input change
     const handleInputChange = e => {
@@ -35,10 +38,10 @@ const CreateSurvey = props => {
         if (isValid) {
             //payload
             const payload = new FormData();
-            payload.append("title",survey.title)
+            payload.append("title", survey.title)
             payload.append("description", survey.description)
             payload.append("xform", survey.XMLFile)
-            payload.append("project_id", 1)
+            payload.append("project_id", props.projectId)
             payload.append("created_by", 1)
 
             console.log(...payload)
@@ -50,14 +53,14 @@ const CreateSurvey = props => {
                     redirectLink();
                 })
                 .catch((err) => {
-                    console.log(err.request);      
+                    console.log(err.request);
                 });
         }
     }
 
     //redirect links
     const redirectLink = () => {
-        return props.history.push("/projects/overview");
+        return props.history.push(`/project-overview/${props.projectId}`);
     };
 
     //return view
@@ -130,7 +133,7 @@ const CreateSurvey = props => {
                                             <Col md={12}>
                                                 <div className="form-group">
                                                     <button className="btn btn-primary mr-2">Save</button>
-                                                    <a href="/projects/overview" className="btn btn-danger">Cancel</a>
+                                                    <a href={'/project-overview/' + props.projectId} className="btn btn-danger">Cancel</a>
                                                 </div>
                                             </Col>
                                         </Row>
