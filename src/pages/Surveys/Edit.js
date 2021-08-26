@@ -14,6 +14,26 @@ const EditSurvey = props => {
         XMLFile: undefined
     };
     const [survey, setSurvey] = useState(initialSurvey);
+    const [projectId, setProjectId] = useState(props.match.params.projectId)
+    const [surveyId, setSurveyId] = useState(props.match.params.surveyId)
+
+    //retrieve data 
+    useEffect(() => {
+        retrieveSurvey();
+    }, []);
+
+    //retrieve single project 
+    const retrieveSurvey = () => {
+        http.get("/surveys/" + surveyId)
+            .then((response) => {
+                console.log(response);
+                setSurvey(response.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+
 
     //handle Input change
     const handleInputChange = e => {
@@ -35,29 +55,28 @@ const EditSurvey = props => {
         if (isValid) {
             //payload
             const payload = new FormData();
-            payload.append("title",survey.title)
+            payload.append("title", survey.title)
             payload.append("description", survey.description)
-            payload.append("xform", survey.XMLFile)
-            payload.append("project_id", 1)
+            payload.append("project_id", projectId)
             payload.append("created_by", 1)
 
             console.log(...payload)
 
             //post data
-            http.post("/surveys/", payload)
+            http.put("/surveys/" + surveyId, payload)
                 .then((res) => {
                     console.log(res);
                     redirectLink();
                 })
                 .catch((err) => {
-                    console.log(err.request);      
+                    console.log(err.request);
                 });
         }
     }
 
     //redirect links
     const redirectLink = () => {
-        return props.history.push("/projects/overview");
+        return props.history.push(`/project-overview/${projectId}`);
     };
 
     //return view
@@ -65,11 +84,11 @@ const EditSurvey = props => {
         <React.Fragment>
             <div className="page-content">
                 <MetaTags>
-                    <title> New Survey| Afyadata</title>
+                    <title> Edit Survey| Afyadata</title>
                 </MetaTags>
                 <Container fluid>
                     {/* Render Breadcrumbs */}
-                    <Breadcrumbs title="Surveys" breadcrumbItem="New Survey" />
+                    <Breadcrumbs title="Surveys" breadcrumbItem="Edit Survey" />
 
                     <Row>
                         <Col lg="12">
@@ -83,7 +102,7 @@ const EditSurvey = props => {
 
                                     <form className="mb-3" onSubmit={handleValidSubmit}>
                                         <Row>
-                                            <Col md={6}>
+                                            <Col md={12}>
                                                 <div className="form-group">
                                                     <label>Title <span className="red">*</span></label>
                                                     <input placeholder="Write form title ..."
@@ -93,18 +112,6 @@ const EditSurvey = props => {
                                                         value={survey.title}
                                                         required />
                                                     <span className="invalid-feedback"></span>
-                                                </div>
-                                            </Col>
-
-                                            <Col md={6}>
-                                                <div className="form-group">
-                                                    <label>XML File <span className="red">*</span></label>
-                                                    <input
-                                                        type="file"
-                                                        name="XMLFile"
-                                                        className="form-control"
-                                                        onChange={handleInputChange}
-                                                        required />
                                                 </div>
                                             </Col>
                                         </Row>
@@ -130,7 +137,7 @@ const EditSurvey = props => {
                                             <Col md={12}>
                                                 <div className="form-group">
                                                     <button className="btn btn-primary mr-2">Save</button>
-                                                    <a href="/projects/overview" className="btn btn-danger">Cancel</a>
+                                                    <a href={'/project-overview/' + projectId} className="btn btn-danger">Cancel</a>
                                                 </div>
                                             </Col>
                                         </Row>

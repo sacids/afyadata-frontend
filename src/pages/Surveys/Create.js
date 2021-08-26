@@ -6,7 +6,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb"
 
 import http from '../../services/http-common'
 
-const CreateSurvey = props => {
+const CreateSurvey = (props) => {
     //initial state
     const initialSurvey = {
         title: "",

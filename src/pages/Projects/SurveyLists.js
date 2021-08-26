@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from "react-router-dom"
+import { Link, Redirect } from "react-router-dom"
 import {
     Row, Col, Card, CardBody
 } from "reactstrap"
@@ -8,9 +8,7 @@ import http from '../../services/http-common'
 
 const SurveyLists = (props) => {
     const [surveys, setSurveys] = useState([]);
-
-    //projectId
-    console.log("ProjectId => " + props.projectId)
+    const [projectId, setProjectId] = useState(props.projectId)
 
     //retrieve data 
     useEffect(() => {
@@ -30,13 +28,13 @@ const SurveyLists = (props) => {
     };
 
     //view data
-    const handleViewData = survey => {
-        props.history.push(`/view-survey-data/${survey.id}`);
+    const handleViewData = (projectId, surveyId) => {
+        props.history.push(`/view-survey-data/${projectId}/${surveyId}`);
     }
 
     //edit survey
-    const handleEditSurvey = survey => {
-        props.history.push(`/edit-survey/${survey.id}`);
+    const handleEditSurvey = (projectId, surveyId) => {
+        props.history.push(`/edit-survey/${projectId}/${surveyId}`);
     }
 
     //delete survey
@@ -85,11 +83,11 @@ const SurveyLists = (props) => {
                                             <td></td>
                                             <td></td>
                                             <td>
-                                                <a onClick={() => handleViewData(survey)} className="btn btn-outline-primary btn-xxs">
+                                                <a onClick={() => handleViewData(projectId, survey.id)} className="btn btn-outline-primary btn-xxs">
                                                     <i className="mdi mdi-eye"></i>
                                                 </a>{" "}
 
-                                                <a onClick={() => handleEditSurvey(survey)} className="btn btn-outline-secondary btn-xxs">
+                                                <a onClick={() => handleEditSurvey(projectId, survey.id)} className="btn btn-outline-secondary btn-xxs">
                                                     <i className="mdi mdi-pencil"></i>
                                                 </a>{" "}
 
