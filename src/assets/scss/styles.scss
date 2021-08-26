@@ -1,0 +1,265 @@
+/*!
+ * User: Renfrid Ngolongolo
+ */
+ /*Google Fonts */
+ @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,200,400,500,600,700,800');
+
+
+ html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+body {   
+    font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #212121;
+}
+
+.font-weight-600{
+    font-weight: 600 !important;
+}
+
+/*===============================================
+Tables
+===============================================*/
+// .table {
+//     border-collapse: collapse;
+//     border-spacing: 0;
+//     margin: 10px 0 1em 1px;
+//     width: 100%;
+// }
+
+// .table th {
+//     font-size: 13px;
+//     font-weight: 600;
+//     text-align: left;
+//     padding: 10px !important;
+//     color: #424242;
+//     background: #f1f1f1;
+//     border: 1px solid #E3E3E3;
+// }
+
+// .table td {
+//     font-size: 13.7px;
+//     vertical-align: middle;
+//     background: #FFF;
+//     color: #212121;
+//     font-weight: 400;
+// }
+
+// .table td a {
+//     text-decoration: none !important;
+//     font-weight: normal !important;
+// }
+
+// .table th a {
+//     text-align: right;
+//     text-decoration: none !important;
+//     font-weight: normal !important;
+// }
+
+// .table td i {
+//     font-size: 14x;
+//     font-weight: 500;
+// }
+
+// .table tr:nth-child(odd) td {
+// background-color: #FAFAFA;
+// }
+
+// .table tr:nth-child(even) td {
+// background-color: #FFF;
+// }
+
+/*===============================================
+Forms
+===============================================*/
+.pure-form {
+    width: 100%;
+}
+
+.form-group{
+    padding: 0;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 12px;
+    color: #424242;
+}
+
+.form-group span.red {
+    color: red;
+}
+
+.form-group button{
+    margin-right: 4px;
+}
+
+
+// /*===============================================
+// Background Colors
+// ===============================================*/
+// .bg-primary {
+//     background-color: #781E14 !important;
+//     color: #ffffff !important;
+// }
+
+// .bg-secondary {
+//     background-color: #1565c0;
+//     color: #ffffff;
+// }
+
+// .bg-success {
+//     background-color: #5cb85c;
+//     color: #ffffff;
+// }
+
+// .bg-yellow {
+//     background-color: #FCC649;
+//     color: #ffffff;
+// }
+
+// .bg-info {
+//     background-color: #5bc0de;
+//     color: #ffffff;
+// }
+
+// .bg-warning {
+//     background-color: #f0ad4e;
+//     color: #ffffff;
+// }
+
+// .bg-danger {
+//     background-color: #d9534f;
+//     color: #ffffff;
+// }
+
+// .bg-dark-200 {
+//     background-color: #2f4050;
+//     color: #ffffff;
+// }
+
+// .bg-dark-100 {
+//     background-color: #293846;
+//     color: #ffffff;
+// }
+
+// .bg-dark-50 {
+//     background-color: #556270;
+//     color: #ffffff;
+// }
+
+// .bg-white {
+//     background-color: #ffffff;
+// }
+
+// .bg-grey {
+//     background-color: #eeeeee;
+// }
+
+// .bg-light-grey {
+//     background-color: #fafafa;
+// }
+
+/*========================================
+Button
+========================================*/
+.btn {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.btn-xxs{
+    padding:.1rem .2rem;
+    font-size:.675rem;
+    line-height:1.5;
+    border-radius:.1rem
+}
+
+// .btn-outline {
+//     color: inherit;
+//     background-color: transparent;
+//     transition: all .5s;
+// }
+
+// .btn-primary {
+//     background: #781E14;
+//     border-color: #781E14;
+// }
+
+// .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+//     color: #ffffff;
+//     background-color: #781E14;
+//     border-color: #781E14;
+// }
+
+// .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+//     background-image: none;
+// }
+
+// .btn-outline-primary{
+//     background: #ffffff;
+//     border-color: #781E14;
+//     color: #781E14;
+// }
+
+// .btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active, .btn-outline-primary.active, .open .dropdown-toggle.btn-outline-primary {
+//     background: #ffffff;
+//     border-color: #781E14;
+//     color: #781E14;
+// }
+
+// // .btn-secondary {
+// //     color: #ffffff;
+// //     background-color: $btn-secondary-color;
+// //     border-color: $btn-secondary-color;
+// // }
+
+// // .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active, .open .dropdown-toggle.btn-secondary {
+// //     color: #ffffff;
+// //     background-color: $btn-secondary-color;
+// //     border-color: $btn-secondary-color;
+// // }
+
+// .btn-secondary:active, .btn-secondary.active, .open .dropdown-toggle.btn-secondary {
+//     background-image: none;
+// }
+
+// // .btn-outline-secondary {
+// //     color: $btn-secondary-color;
+// //     background-color: #fff;
+// //     border-color: $btn-secondary-color;
+// // }
+
+// .btn-outline-secondary:hover, .btn-outline-secondary:focus, .btn-outline-secondary:active, .btn-outline-secondary.active, .open .dropdown-toggle.btn-outline-secondary {
+//     color: #1565c0;
+//     background-color: #fff;
+//     border-color: #1565c0;
+// }
+
+// .btn-outline-success{
+//     color: #5cb85c;
+//     background-color: #fff;
+//     border-color: #5cb85c;
+// }
+
+// .btn-outline-success:hover, .btn-outline-success:focus, .btn-outline-success:active, .btn-outline-success.active, .open .dropdown-toggle.btn-outline-success {
+//     color: #5cb85c;
+//     background-color: #fff;
+//     border-color: #5cb85c;
+// }
+
+// .btn-outline-danger {
+//     color: #d9534f;
+//     background-color: #fff;
+//     border-color: #d9534f;
+// }
+
+// .btn-outline-danger:hover, .btn-outline-danger:focus, .btn-outline-danger:active, .btn-outline-danger.active, .open .dropdown-toggle.btn-outline-danger {
+//     color: #d9534f;
+//     background-color: #fff;
+//     border-color: #d9534f;
+// }
